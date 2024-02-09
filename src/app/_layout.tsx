@@ -1,5 +1,6 @@
 import { useFonts } from 'expo-font'
 import { SplashScreen, Stack } from 'expo-router'
+import { StatusBar } from 'expo-status-bar'
 import { useEffect } from 'react'
 import { View } from 'react-native'
 
@@ -18,10 +19,14 @@ export default function RootLayout() {
   if (!loaded) return null
 
   return (
-    <Stack
-      screenOptions={{
-        headerShown: false,
-      }}
-    />
+    <>
+      <StatusBar hidden />
+      <Stack
+        screenOptions={{
+          headerShown: false,
+          animation: 'ios',
+        }}
+      />
+    </>
   )
 }
